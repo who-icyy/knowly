@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import LanguageCard from "./languages/languageCard";
+import AddLang from "./languages/addLang";
+import Link from "next/link";
 
 export default function Home() {
   const topics = [
@@ -39,6 +41,11 @@ export default function Home() {
           </div>
         ))
       }
+      <div className="hover:scale-110 transition-all ease-in-out duration-500">
+        <Link href={"/languages"}>
+          <AddLang />
+        </Link>
+      </div>
     </div>
   );
 }

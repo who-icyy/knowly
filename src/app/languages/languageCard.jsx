@@ -24,7 +24,7 @@ export default function LanguageCard(props) {
                     <Progress value={props.progress} className="w-[60%]" />                    
                 </CardContent>
                 <CardFooter className="flex justify-between">
-                    <Button variant="outline">Cancel</Button>
+                    <Button variant="outline">Path</Button>
                     <Button>Continue</Button>
                 </CardFooter>
             </Card>
