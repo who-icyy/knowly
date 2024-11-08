@@ -11,7 +11,6 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
     Select,
@@ -24,7 +23,9 @@ import {
 export default function Languages() {
     const [level, setLevel] = useState("");
     const [language, setLanguage] = useState("");
-    const languages = [];
+    const languages = [
+        "C", "C++", "Java", "Python", "Javascript", "RUST", "Go", "Kotlin"
+    ];
     return (
         <div className="flex justify-center items-center align-middle mt-32">
             <Card className="w-[500px] h-[300px]">
@@ -42,9 +43,9 @@ export default function Languages() {
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
                                     <SelectContent position="popper">
-                                        <SelectItem value="next">Basic</SelectItem>
-                                        <SelectItem value="sveltekit">Intermidiate</SelectItem>
-                                        <SelectItem value="astro">Advance</SelectItem>
+                                        <SelectItem value="basic">Basic</SelectItem>
+                                        <SelectItem value="intermediate">Intermediate</SelectItem>
+                                        <SelectItem value="advance">Advance</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -55,10 +56,14 @@ export default function Languages() {
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
                                     <SelectContent position="popper">
-                                        <SelectItem value="next">Next.js</SelectItem>
-                                        <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                                        <SelectItem value="astro">Astro</SelectItem>
-                                        <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                                        {
+                                            languages.map((val) =>
+
+                                                <SelectItem key={val} value={val}>
+                                                    {val}
+                                                </SelectItem>
+                                            )
+                                        }
                                     </SelectContent>
                                 </Select>
                             </div>
